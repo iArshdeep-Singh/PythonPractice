@@ -1,6 +1,6 @@
 print("\n1 for a Coffee\n2 for a Tea\n3 for a Juice")
 
-choice = int(input("\nEnter A Number: ")) 
+choice = int(input("\nEnter A Number: "))
 
 print("----------------------------------------------------------------------------------")
 

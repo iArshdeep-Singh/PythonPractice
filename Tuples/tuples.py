@@ -5,4 +5,4 @@
 
 iTuple = ("apple", "banana", "cherry")
 
-print(iTuple, "\n")
+

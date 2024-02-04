@@ -25,7 +25,7 @@ print("Python is " + x)
 
 # Normally, when a variable is created inside a function, that variables is local, and
 # can only be used inside that function.
-# To create a global variable inside a function, the 'global' keyword can be used.
+# To create a global variable inside a function, the 'global' keyword is used.
 
 def myFuncxl():
     global x 

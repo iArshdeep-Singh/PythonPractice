@@ -3,7 +3,7 @@
 # Sets items are UNCHANGEABLE, but items can be removed and new items can be added.
 # A set is a collection of UNIQUE items. 
 # It doesn't allow duplicate items, each item in set must be unique.
-# Sets ate writeen with curly brackets.
+# Sets ate written with curly brackets.
 # UNINDEXED means sets appear in arbitrary index.
 
 

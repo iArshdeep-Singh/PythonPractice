@@ -113,4 +113,4 @@ mx = bytearray(5)
 print(mx)
 
 nx = memoryview(bytes(5))
-print(nx)
+print(nx)   

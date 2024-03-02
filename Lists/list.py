@@ -37,7 +37,7 @@ iList = ["apple", "banana", "cherry"]
 print(type(iList), '\n')
 
 
-# The lis() Constructor
+# The list() Constructor
 iList = list(("apple", "banana", "cherry")) # NOTE the double round-brackets
 
 print(iList)

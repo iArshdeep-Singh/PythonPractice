@@ -1,67 +1,107 @@
-# Initialize lists to store salesperson data, sales table, and commission table
-salespeople_data = []
-sales_table = []
-commission_table = []
+# declare list variables
+id = [] 
 
-# Function to calculate commission based on sales amount
+telephoneSales = []
+tabletSales = []
+computerSales = []
+totalSales = []
 
-
-def calculate_commission(sales_amount):
-    if sales_amount <= 1000:
-        return 20
-    elif 1000 < sales_amount <= 2000:
-        return 30
-    elif 2000 < sales_amount <= 3000:
-        return 40
-    else:
-        return 50
+telephoneCommission = []
+tabletCommission = []
+computerCommission = []
+totalCommission = []
 
 
-# Main loop for inputting salesperson data
+# get input
 while True:
-    # Input salesperson's ID
-    salesperson_id = input("Enter Salesperson's ID: ")
 
-    # Input and validate sales amounts
-    sales_amounts = []
-    sales_labels = ['telephone', 'tablet', 'computer']
-    for label in sales_labels:
+    id.append(int(input("\n-> Enter Salesperson's ID: ")))
+    print("\n")
+
+    labels = ["telephone", "tablet", "computer"]
+
+    for label in labels:
+
         while True:
+
             amount = int(input(f"Enter {label} sales: "))
+
             if amount < 0:
-                print(f"Invalid: Enter valid {label} sales.")
+                print("INVALID: Enter Valid Input\n")
             else:
-                sales_amounts.append(amount)
-                break
+                if label == "telephone":
+                    telephoneSales.append(amount)
+                    if amount < 1000:
+                        telephoneCommission.append(20)
+                    elif 1000 < amount <= 2000:
+                        telephoneCommission.append(30)
+                    elif 2000 < amount <= 3000:
+                        telephoneCommission.append(40)
+                    elif amount >= 3000:
+                        telephoneCommission.append(50)
+                    break
 
-    # Calculate commission for each sales category
-    commissions = [calculate_commission(amount) for amount in sales_amounts]
+                elif label == "tablet":
+                    tabletSales.append(amount)
+                    if amount < 1000:
+                        tabletCommission.append(30)
+                    elif 1000 < amount <= 2000:
+                        tabletCommission.append(40)
+                    elif 2000 < amount <= 3000:
+                        tabletCommission.append(50)
+                    elif amount >= 3000:
+                        tabletCommission.append(60)
+                    break
+                
+                elif label == "computer":
+                    computerSales.append(amount)
+                    if amount < 1000:
+                        computerCommission.append(40)
+                    elif 1000 < amount <= 2000:
+                        computerCommission.append(50)
+                    elif 2000 < amount <= 3000:
+                        computerCommission.append(60)
+                    elif amount >= 3000:
+                        computerCommission.append(70)
+                    break
+                    
+                else:
+                    break
 
-    # Append salesperson data to lists
-    salespeople_data.append((salesperson_id, *sales_amounts))
-    sales_table.append((salesperson_id, *sales_amounts))
-    commission_table.append((salesperson_id, *commissions))
-
-    # Check if user wants to process another salesperson
-    another_salesperson = input(
-        "Do you want to process another Salesperson? (yes/no): ")
-    if another_salesperson.lower() != 'yes':
+    proceed = input("\nDo you want to process another Salesperson?\nPress 1 to continue and press any key to terminate: ")
+    if proceed == '1':
+        continue
+    else:
         break
 
-# Print sales table
-print("\nSales Table:")
-print("ID\tTelephone Sales\tTablet Sales\tComputer Sales")
-totals = [0] * (len(sales_labels) + 1)
-for data in sales_table:
-    print("\t".join(str(x) for x in data))
-    totals = [sum(x) for x in zip(totals, data[1:])]
-print("Total\t" + "\t".join(str(x) for x in totals))
 
-# Print commission table
-print("\nCommission Table:")
-print("ID\tTelephone Commission\tTablet Commission\tComputer Commission")
-total_commissions = [0] * (len(sales_labels))
-for data in commission_table:
-    print("\t".join(str(x) for x in data))
-    total_commissions = [sum(x) for x in zip(total_commissions, data[1:])]
-print("Total\t" + "\t".join(str(x) for x in total_commissions))
+
+# calculate sales
+totalSales = [sum(telephoneSales), sum(tabletSales), sum(computerSales)]
+
+# calculate commission
+totalCommission = [sum(telephoneCommission), sum(tabletCommission), sum(computerCommission)]
+
+
+# print sales table
+print("\nSales Table-\n| Id  \t| Telephones \t| Tablets \t| Computers")
+
+x = 0
+
+while x < len(id):
+    print(f"| {id[x]}  \t| {telephoneSales[x]} \t\t| {tabletSales[x]} \t\t| {computerSales[x]}")
+    x += 1
+
+print(f"| Total | {totalSales[0]} \t\t| {totalSales[1]} \t\t| {totalSales[2]}")
+
+
+# print commission table
+print("\n\nCommission Table-\n| Id  \t| Telephones \t| Tablets \t| Computers")
+
+y = 0
+
+while y < len(id):
+    print(f"| {id[y]}  \t| {telephoneCommission[y]} \t\t| {tabletCommission[y]} \t\t| {computerCommission[y]}")
+    y += 1
+
+print(f"| Total | {totalCommission[0]} \t\t| {totalCommission[1]} \t\t| {totalCommission[2]}")

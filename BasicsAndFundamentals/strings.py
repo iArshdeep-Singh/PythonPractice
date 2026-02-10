@@ -1,4 +1,4 @@
-# Strings in Python are surrounded by eiter single qoutation marks, or double qoutation marks.
+# Strings in Python are surrounded by either single qoutation marks, or double qoutation marks.
 x = "Hello"
 y = 'hello'
 

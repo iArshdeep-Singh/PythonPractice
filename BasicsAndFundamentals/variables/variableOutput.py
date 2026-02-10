@@ -13,7 +13,7 @@ y = 7
 print(x + y)
 
 
-# When you try to combine a string and a number with the '+' operator, Python will give you and error.
+# When you try to combine a string and a number with the '+' operator, Python will give you an error.
 
 x = 5
 y = "seven"

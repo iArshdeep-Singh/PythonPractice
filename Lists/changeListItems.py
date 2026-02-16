@@ -29,7 +29,7 @@ iList[1:3] = ["orange"]
 print(iList, "\n")
 
 
-# Insert Items: The 'insert(index, item)' method inserts an item at the specified index.
+# Insert Items: The 'insert(index, item)' method inserts an item before the specified index.
 
 iList.insert(0, "mint")
 
